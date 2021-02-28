@@ -2,9 +2,10 @@ import React, {useState} from "react";
 import client from "./gitClient";
 import Search from './components/Search'
 import {ApolloProvider} from '@apollo/react-hooks'
-import RepositoriesList from "./components/RepositoriesList";
-// import {ApolloProvider} from 'react-apollo'
 
+import RepositoriesList from "./components/RepositoriesList";
+
+// console.log('client', client)
 
 
 const App = () => {
@@ -24,6 +25,6 @@ const App = () => {
       </ApolloProvider>
 
   );
-}
+};
 
 export default App;

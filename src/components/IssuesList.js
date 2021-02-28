@@ -1,66 +1,51 @@
 import {useQuery} from '@apollo/react-hooks';
-import {CircularProgress, List, Typography, makeStyles} from '@material-ui/core';
-import React from 'react';
 import Issue from "./Issue";
 import {getIssues} from '../queries/queries.js';
 
-const useStyles = makeStyles({
-    root: {
-        flexDirection: 'column'
-    },
-    spinnerContainer: {
-        display: 'flex',
-        justifyContent: 'space-around'
-    }
-});
 
 const IssuesList = ({repoName, repoOwner}) => {
-    const classes = useStyles();
     const {data, loading, error} = useQuery(getIssues,
         {variables: {
                 name: repoName,
                 owner: repoOwner
             }});
 
+
+    // console.log('issues data',data)
+
+
     if (loading) {
         return (
-            <div className={classes.spinnerContainer}>
-                <CircularProgress />
+            <div style={{textAlign: "center"}}>
+                loading issues...
             </div>
         );
     }
 
     if (error) {
         return (
-            <Typography
-                variant={'overline'}
-                component={'div'}
-                color={'error'}
-            >
+            <div>
                 {error}
-            </Typography>
+            </div>
         )
     }
 
     if (!data.repository.issues.nodes.length) {
         return (
-            <Typography
-                variant={'overline'}
-                component={'div'}
-            >
+            <div style={{background: "crimson", margin: "0px 20px", textAlign: "center", color: "#eee"}}>
                 There are no issues!
-            </Typography>
+            </div>
         )
     }
 
     return (
-        <div className={classes.root}>
-            <Typography variant={'h5'}>Latest issues: </Typography>
-            <List>
+        <div className="issues">
+            <h4>Issues: </h4>
                 {data.repository.issues.nodes.map((issue) => (
-                    <Issue title={issue.title} bodyHTML={issue.bodyHTML} />
+                    <li key={issue.id}>
+                        <Issue title={issue.title}  />
+                    </li>
                 ))}
-            </List>
         </div>
     );
 };

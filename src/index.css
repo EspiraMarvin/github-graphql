@@ -1,3 +1,4 @@
+
 body {
   margin: 0;
   width: 100%;
@@ -17,8 +18,15 @@ code {
   text-align: center
 }
 
-.search {
-  text-align: center;
+.search{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.search .search-icon {
+  position: absolute;
+  right: 0;
+  padding: 0;
 }
 
 .repo-list{
@@ -27,3 +35,8 @@ code {
   margin-top: 5px;
   width: 100%;
 }
+.repository p{
+  font-size: 18px;
+  margin-left: 15px;
+}
+

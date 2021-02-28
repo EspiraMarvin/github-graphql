@@ -1,27 +1,21 @@
 import React from "react";
-import IssueList from "./IssuesList";
+import IssuesList from "./IssuesList";
+import TagsList from "./TagsList";
 
-const Repository = ({repo, expanded, onToggled}) => {
+const Repository = ({repo}) => {
 
-    const {node: {name, descriptionHTML, owner: {login}, stargazers: {totalCount: totalStarCount}}} = repo;
+    const {node: {name, owner: {login}}} = repo;
 
     return (
-        <div>
-            <div>
-                <p>{name}</p>
-                <p>{`by ${login}`}</p>
-                <p>TotalStarCount - {totalStarCount}</p>
+        <div className="repository">
+                <p>Repo Name: {name}</p>
+                <p>Owned {`by ${login}`}</p>
                 <div>
-                    <p>
-                        dangerouslySetInnerHTML={{__html: descriptionHTML}}
-                    </p>
+                    <IssuesList repoName={name} repoOwner={login} />
                 </div>
-                <div>
-                    <p>Issues will go here</p>
-                    <IssueList repoName={name} repoOwner={login} />
+                <div style={{marginTop: "4px"}}>
+                    <TagsList tagRepoName={name} TagRepoOwner={login}/>
                 </div>
-            </div>
-
         </div>
     )
 }

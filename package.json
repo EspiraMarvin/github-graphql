@@ -3,20 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@material-ui/core": "^4.11.3",
-    "@material-ui/icons": "^4.11.2",
+    "@apollo/react-hooks": "latest",
     "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
+    "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.1.10",
     "apollo-boost": "^0.4.9",
     "graphql": "^15.5.0",
     "graphql-tag": "latest",
+    "jest-dom": "^4.0.0",
     "react": "^17.0.1",
-    "react-apollo": "^3.1.5",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.3",
-    "web-vitals": "^1.0.1",
-    "@apollo/react-hooks": "latest"
+    "react-test-renderer": "^17.0.1",
+    "web-vitals": "^1.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -42,6 +41,5 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }

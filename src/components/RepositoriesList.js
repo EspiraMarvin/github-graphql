@@ -1,4 +1,3 @@
-import React, {useState, useEffect} from 'react'
 import {useQuery} from "@apollo/react-hooks";
 import {search_repos} from "../queries/queries";
 import Repository from "./Repository";
@@ -7,22 +6,15 @@ import Repository from "./Repository";
 const RepositoriesList = ({searchTerm}) => {
 
 
-    const [repository, setRepository] = useState(null);
     const {data, loading, error} = useQuery(search_repos,
         { variables: {search_term: searchTerm}}
         );
 
 
-    console.log('repos data',data);
-
-    useEffect(() => {
-        setRepository(null)
-    }, [data]);
-
      if (loading) {
             return (
                 <div style={{textAlign: "center"}}>
-                    Searching...
+                    loading...
                 </div>
             )
         } else if (error) {
@@ -34,7 +26,7 @@ const RepositoriesList = ({searchTerm}) => {
         } else if (!data.search.repositoryCount) {
             return (
                 <div style={{textAlign: "center"}}>
-                    <p>No repo found</p>
+                    <p>No repo available</p>
                 </div>
             )
         }
@@ -42,19 +34,18 @@ const RepositoriesList = ({searchTerm}) => {
 
     return (
      <div>
-         <ul className="repo-list">
              {
                  data.search.edges.map((repo, k) => (
-                     <Repository
-                        repo={repo}
-                        expanded={repository === k}
-                        onToggled={() => setRepository(k)}
-                        key={k}
-                     />
-             ))
+                     <ul className="repo-list" key={k}>
+                         <Repository
+                            repo={repo}
+                            key={k}
+                         />
+                     </ul>
+
+                 ))
 
              }
-         </ul>
      </div>
     )
 };
