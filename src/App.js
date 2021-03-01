@@ -20,6 +20,7 @@ const App = () => {
                <RepositoriesList searchTerm={searchTerm}/>
            </div>
           </header>
+            <Button  label="this test button"/>
         </div>
       </ApolloProvider>
 

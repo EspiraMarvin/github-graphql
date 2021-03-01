@@ -1,0 +1,8 @@
+.button-style {
+    position: relative;
+    width: 40%;
+    text-align: center;
+    padding: 4px;
+    margin: 40px 30%;
+    border: 1px solid #000;
+}
