@@ -1,11 +1,10 @@
-import React, {useState} from "react";
-import client from "./gitClient";
+import React, {useState,} from "react";
 import Search from './components/Search'
+import client from "./gitClient";
 import {ApolloProvider} from '@apollo/react-hooks'
-
 import RepositoriesList from "./components/RepositoriesList";
-
-// console.log('client', client)
+//test component
+import Button from "./componentstest/button/button";
 
 
 const App = () => {

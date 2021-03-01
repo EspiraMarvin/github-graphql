@@ -1,6 +1,8 @@
 import {useQuery} from "@apollo/react-hooks";
 import {search_repos} from "../queries/queries";
 import Repository from "./Repository";
+// import {fetchRepositories, repositorySelector, getSearchTerm} from "../redux/repositorySlice";
+// import { useSelector, useDispatch } from 'react-redux'
 
 
 const RepositoriesList = ({searchTerm}) => {
@@ -30,7 +32,6 @@ const RepositoriesList = ({searchTerm}) => {
                 </div>
             )
         }
-
 
     return (
      <div>

@@ -11,7 +11,7 @@ const TagsList = ({tagRepoName, TagRepoOwner}) => {
                 owner: TagRepoOwner
             }});
 
-    console.log('tags data',data)
+    // console.log('tags data',data)
 
     if (loading) {
         return (
@@ -28,7 +28,7 @@ const TagsList = ({tagRepoName, TagRepoOwner}) => {
     }
 
     if (!data.repository.refs.nodes.length) {
-        console.log('no data')
+        // console.log('no data')
         return (
             <div style={{background: "crimson", margin: "0px 20px", textAlign: "center", color: "#eee"}}>
                 There are no tags!
