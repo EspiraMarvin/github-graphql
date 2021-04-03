@@ -1,6 +1,6 @@
 
 body {
-  margin: 0;
+  margin: 10px;
   width: 100%;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -39,4 +39,9 @@ code {
   font-size: 18px;
   margin-left: 15px;
 }
-
+.tag-list{
+  margin: 10px;
+}
+.issues{
+  margin: 10px;
+}
