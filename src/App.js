@@ -4,7 +4,6 @@ import client from "./gitClient";
 import {ApolloProvider} from '@apollo/react-hooks'
 import RepositoriesList from "./components/RepositoriesList";
 //test component
-import Button from "./componentstest/button/button";
 
 
 const App = () => {
@@ -20,7 +19,6 @@ const App = () => {
                <RepositoriesList searchTerm={searchTerm}/>
            </div>
           </header>
-            <Button  label="this test button"/>
         </div>
       </ApolloProvider>
 
